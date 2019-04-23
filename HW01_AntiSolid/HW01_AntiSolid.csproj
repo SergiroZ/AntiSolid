@@ -43,11 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exception\AccountBalanceMismatchException.cs" />
+    <Compile Include="Exception\InsufficientInventoryException.cs" />
+    <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Entity\Order.cs" />
+    <Compile Include="Exception\OrderException.cs" />
+    <Compile Include="Entity\Item.cs" />
+    <Compile Include="Entity\PaymentDetails.cs" />
+    <Compile Include="Entity\PaymentMethod.cs" />
+    <Compile Include="Service\PaymentService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\ShoppingCart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
