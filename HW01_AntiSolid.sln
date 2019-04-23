@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW01_AntiSolid", "HW01_AntiSolid\HW01_AntiSolid.csproj", "{B8A87526-47C0-4A42-A0F0-C10F0E4EDA22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDI", "SimpleDI\SimpleDI.csproj", "{EF475F7D-3D19-4333-96DB-C307741A2790}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B8A87526-47C0-4A42-A0F0-C10F0E4EDA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A87526-47C0-4A42-A0F0-C10F0E4EDA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A87526-47C0-4A42-A0F0-C10F0E4EDA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF475F7D-3D19-4333-96DB-C307741A2790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF475F7D-3D19-4333-96DB-C307741A2790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF475F7D-3D19-4333-96DB-C307741A2790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF475F7D-3D19-4333-96DB-C307741A2790}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
