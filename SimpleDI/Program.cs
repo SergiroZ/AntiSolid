@@ -25,7 +25,7 @@ namespace SimpleDI
     }
 
     /// <summary>
-    /// Выбор места логирования (true - Console, false - Debug) 
+    ///     Выбор места логирования (true - Console, false - Debug)
     /// </summary>
     public class LoggingInTo
     {
@@ -41,7 +41,7 @@ namespace SimpleDI
     }
 
     /// <summary>
-    /// Логирование
+    ///     Логирование
     /// </summary>
     public class Logging
     {
@@ -49,9 +49,9 @@ namespace SimpleDI
 
         /// <summary>
         ///     Абстракции не зависят от деталей. Детали зависят от абстракций.
-        /// Т.е. мы не знаем деталей того, что происходит в классе Logging,
-        /// мы просто передаем через конструктор класс, реализующий
-        /// необходимую абстракцию.
+        ///     Т.е. мы не знаем деталей того, что происходит в классе Logging,
+        ///     мы просто передаем через конструктор класс, реализующий
+        ///     необходимую абстракцию.
         /// </summary>
         /// <param name="instance">класс, реализующий необходимую абстракцию</param>
         public Logging(ILayer instance) => _instance = instance;
@@ -63,7 +63,7 @@ namespace SimpleDI
     }
 
     /// <summary>
-    /// DI контейнер
+    ///     DI контейнер
     /// </summary>
     public static class DIContainer
     {

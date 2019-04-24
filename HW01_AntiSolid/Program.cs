@@ -16,18 +16,19 @@ namespace HW01_AntiSolid
 
             var order = new Order();
             order.Checkout(
-                shoppingCart,
-                paymentDetails: new PaymentDetails
-                {
-                    CardholderName = "Ivan",
-                    CreditCardNumber = "1111 2222 3333 4444",
-                    ExpiryDate = DateTime.ParseExact(
-                        "12/11/17 2:52:35 PM", 
-                        "yy/MM/dd h:mm:ss tt",
-                        CultureInfo.InvariantCulture),
-                    PaymentMethod = PaymentMethod.CreditCard
-                },
-                notifyCustomer: true);
+                           shoppingCart,
+                           new PaymentDetails
+                           {
+                               CardholderName = "Ivan",
+                               CreditCardNumber = "1111 2222 3333 4444",
+                               ExpiryDate = DateTime.ParseExact(
+                                                                "12/11/17 2:52:35 PM",
+                                                                "yy/MM/dd h:mm:ss tt",
+                                                                CultureInfo
+                                                                    .InvariantCulture),
+                               PaymentMethod = PaymentMethod.CreditCard
+                           },
+                           true);
         }
     }
 }

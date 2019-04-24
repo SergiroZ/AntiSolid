@@ -3,8 +3,6 @@
     public class OrderException : System.Exception
     {
         public OrderException(string message, System.Exception innerException)
-            : base(message, innerException)
-        {
-        }
+            : base(message, innerException) { }
     }
 }

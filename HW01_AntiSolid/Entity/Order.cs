@@ -5,17 +5,16 @@ using HW01_AntiSolid.Service;
 namespace HW01_AntiSolid.Entity
 {
     /// <summary>
-    /// Нарушение принципа единственной ответственности 
-    /// Single responsibility principle (SRP):
-    /// класс Order выполняет много разнородных вещей - проверка после размещения
-    /// заказа клиентом, отправка электронной почты, регистрация исключений,
-    /// использование кредитных карт
-    /// 
+    ///     Нарушение принципа единственной ответственности
+    ///     Single responsibility principle (SRP):
+    ///     класс Order выполняет много разнородных вещей - проверка после размещения
+    ///     заказа клиентом, отправка электронной почты, регистрация исключений,
+    ///     использование кредитных карт
     /// </summary>
     public class Order
     {
         public void Checkout(ShoppingCart shoppingCart, PaymentDetails paymentDetails,
-            bool notifyCustomer)
+                             bool notifyCustomer)
         {
             if (paymentDetails.PaymentMethod == PaymentMethod.CreditCard)
                 ChargeCard(paymentDetails, shoppingCart);
@@ -52,7 +51,8 @@ namespace HW01_AntiSolid.Entity
                 catch (InsufficientInventoryException ex)
                 {
                     throw new OrderException(
-                        "Insufficient inventory for item " + item.Description, ex);
+                                             "Insufficient inventory for item " +
+                                             item.Description, ex);
                 }
                 catch (System.Exception ex)
                 {
@@ -77,8 +77,8 @@ namespace HW01_AntiSolid.Entity
             catch (AccountBalanceMismatchException ex)
             {
                 throw new OrderException(
-                    "The card gateway rejected the card based on the address provided.",
-                    ex);
+                                         "The card gateway rejected the card based on the address provided.",
+                                         ex);
             }
             catch (System.Exception ex)
             {
