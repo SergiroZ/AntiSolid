@@ -4,6 +4,14 @@ using HW01_AntiSolid.Service;
 
 namespace HW01_AntiSolid.Entity
 {
+    /// <summary>
+    /// Нарушение принципа единственной ответственности 
+    /// Single responsibility principle (SRP):
+    /// класс Order выполняет много разнородных вещей - проверка после размещения
+    /// заказа клиентом, отправка электронной почты, регистрация исключений,
+    /// использование кредитных карт
+    /// 
+    /// </summary>
     public class Order
     {
         public void Checkout(ShoppingCart shoppingCart, PaymentDetails paymentDetails,
