@@ -12,7 +12,7 @@ namespace SimpleDI
     {
         public void Write(string text)
         {
-            Console.WriteLine(text);
+            Console.WriteLine("Console: " + text);
         }
     }
 
@@ -20,7 +20,7 @@ namespace SimpleDI
     {
         public void Write(string text)
         {
-            Console.WriteLine(text);
+            Console.WriteLine("Debug: " + text);
         }
     }
 
@@ -69,6 +69,7 @@ namespace SimpleDI
     {
         private static readonly Dictionary<Type, Type> RegisteredObjects =
             new Dictionary<Type, Type>();
+
         /// <summary>
         /// Регистрация объекта в контейнере 
         /// </summary>
