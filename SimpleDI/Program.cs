@@ -1,97 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SimpleDI
 {
-    public interface ILayer
-    {
-        void Write(string text);
-    }
-
-    public class ConsoleLayer : ILayer
-    {
-        public void Write(string text)
-        {
-            Console.WriteLine("Console: " + text);
-        }
-    }
-
-    public class DebugLayer : ILayer
-    {
-        public void Write(string text)
-        {
-            Console.WriteLine("Debug: " + text);
-        }
-    }
-
-    /// <summary>
-    ///     Выбор места логирования (true - Console, false - Debug)
-    /// </summary>
-    public class LoggingInTo
-    {
-        private readonly ILayer _instance;
-
-        public LoggingInTo(bool i) =>
-            _instance = i ? (ILayer) new ConsoleLayer() : new DebugLayer();
-
-        public void Write(string text)
-        {
-            _instance.Write(text);
-        }
-    }
-
-    /// <summary>
-    ///     Логирование
-    /// </summary>
-    public class Logging
-    {
-        private readonly ILayer _instance;
-
-        /// <summary>
-        ///     Абстракции не зависят от деталей. Детали зависят от абстракций.
-        ///     Т.е. мы не знаем деталей того, что происходит в классе Logging,
-        ///     мы просто передаем через конструктор класс, реализующий
-        ///     необходимую абстракцию.
-        /// </summary>
-        /// <param name="instance">класс, реализующий необходимую абстракцию</param>
-        public Logging(ILayer instance) => _instance = instance;
-
-        public void Write(string text)
-        {
-            _instance.Write(text);
-        }
-    }
-
-    /// <summary>
-    ///     DI контейнер
-    /// </summary>
-    public static class DIContainer
-    {
-        private static readonly Dictionary<Type, Type> RegisteredObjects =
-            new Dictionary<Type, Type>();
-
-        /// <summary>
-        /// Регистрация объекта в контейнере 
-        /// </summary>
-        /// <typeparam name="TKey">Тип абстракции</typeparam>
-        /// <typeparam name="TConcrete">Тип объекта</typeparam>
-        public static void Register<TKey, TConcrete>() where TConcrete : TKey
-        {
-            RegisteredObjects[typeof(TKey)] = typeof(TConcrete);
-        }
-
-        /// <summary>
-        /// Получение объекта из контейнера
-        /// </summary>
-        /// <typeparam name="TKey">Тип абстракции</typeparam>
-        /// <returns>Объект</returns>
-        public static dynamic Resolve<TKey>()
-        {
-            return Activator.CreateInstance(RegisteredObjects[typeof(TKey)]);
-        }
-    }
-
-
     internal static class Program
     {
         private static void Main()
@@ -107,6 +17,8 @@ namespace SimpleDI
 
             ILayer layer = DIContainer.Resolve<ILayer>();
             layer.Write("Hello from IoC!!!");
+
+            Console.WriteLine();
         }
     }
 }
